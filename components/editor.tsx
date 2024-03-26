@@ -1,10 +1,10 @@
 'use client'
 
-import { javascript } from '@codemirror/lang-javascript'
+import { python } from '@codemirror/lang-python'
 import { vscodeDark } from '@uiw/codemirror-theme-vscode'
 import CodeMirror from '@uiw/react-codemirror'
 
-const extensions = [javascript({ jsx: true, typescript: true })]
+const extensions = [python()]
 
 interface EditorProps {
 	editable?: boolean

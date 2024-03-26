@@ -1,21 +1,23 @@
 'use client'
 
+import { Header } from '@/components/header'
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
+import { api } from '@/convex/_generated/api'
+import { python } from '@codemirror/lang-python'
+import { vscodeDark } from '@uiw/codemirror-theme-vscode'
+
+import CodeMirror from '@uiw/react-codemirror'
+import { useMutation } from 'convex/react'
+import { randomBytes } from 'crypto'
+
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
 
-import { python } from '@codemirror/lang-python'
-import { vscodeDark } from '@uiw/codemirror-theme-vscode'
-import CodeMirror from '@uiw/react-codemirror'
-
-import { Header } from '@/components/header'
-import { api } from '@/convex/_generated/api'
-import { useMutation } from 'convex/react'
-import { randomBytes } from 'crypto'
-import { useRouter } from 'next/navigation'
-
 const extensions = [python()]
 
-const CodeEditor = () => {
+export const CodeEditor = () => {
 	const router = useRouter()
 	const create = useMutation(api.code.create)
 	const [content, setContent] = useState('')
@@ -38,12 +40,22 @@ const CodeEditor = () => {
 		<div>
 			<Header>
 				<div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
-					<button
-						className='text-white bg-[#5d7aec] py-2 px-4 rounded-md hover:bg-[#4358ac] transition-colors'
+					<HoverBorderGradient
+						containerClassName='rounded-full'
+						as='button'
+						className='bg-transparent flex items-center space-x-2'
 						onClick={onCreate}
 					>
-						Сохранить
-					</button>
+						<span>Save</span>
+					</HoverBorderGradient>
+					<HoverBorderGradient
+						containerClassName='rounded-full'
+						as='button'
+						className='bg-transparent flex items-center space-x-2'
+						onClick={onCreate}
+					>
+						<Link href='/about'>About us</Link>
+					</HoverBorderGradient>
 				</div>
 			</Header>
 			<CodeMirror
@@ -60,5 +72,3 @@ const CodeEditor = () => {
 		</div>
 	)
 }
-
-export default CodeEditor

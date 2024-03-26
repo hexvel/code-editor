@@ -28,7 +28,7 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
 
 	return (
 		<>
-			{document === undefined ? (
+			{document === undefined && document.content == undefined ? (
 				<div>
 					<div className='md:max-w-3xl lg:max-w-4xl mx-auto mt-10'>
 						<div className='space-y-4 pl-8 pt-4'>

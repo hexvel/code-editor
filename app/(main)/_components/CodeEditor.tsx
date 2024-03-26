@@ -48,7 +48,6 @@ export const CodeEditor = () => {
             containerClassName='rounded-full'
             as='button'
             className='bg-transparent transition-transform flex items-center space-x-2'
-            onClick={onCreate}
           >
             <Link href='/about'>About us</Link>
           </HoverBorderGradient>

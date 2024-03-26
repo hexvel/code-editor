@@ -8,7 +8,7 @@ const extensions = [javascript({ jsx: true, typescript: true })]
 
 interface EditorProps {
 	editable?: boolean
-	content: string
+	content?: string
 }
 
 const Editor = ({ editable, content }: EditorProps) => {

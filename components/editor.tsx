@@ -1,7 +1,7 @@
 "use client";
 
 import { python } from "@codemirror/lang-python";
-import { vscodeDark } from "@uiw/codemirror-theme-vscode";
+import { duotoneDark } from "@uiw/codemirror-theme-duotone";
 import CodeMirror from "@uiw/react-codemirror";
 
 const extensions = [python()];
@@ -15,11 +15,11 @@ const Editor = ({ editable, content }: EditorProps) => {
   return (
     <div>
       <CodeMirror
-        className='text-2xl'
+        className='text-xl'
         height='100vh'
         editable={editable}
         tabIndex={4}
-        theme={vscodeDark}
+        theme={duotoneDark}
         value={content}
         extensions={extensions}
         basicSetup={{

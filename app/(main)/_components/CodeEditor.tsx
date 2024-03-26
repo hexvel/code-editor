@@ -4,24 +4,25 @@ import ConfirmDialog from "@/components/confirm";
 import { Header } from "@/components/header";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { api } from "@/convex/_generated/api";
-import { python } from "@codemirror/lang-python";
-import { vscodeDark } from "@uiw/codemirror-theme-vscode";
+import { duotoneDark } from "@uiw/codemirror-theme-duotone";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { useMutation } from "convex/react";
 import { randomBytes } from "crypto";
 
+import { python } from "@codemirror/lang-python";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
-
-const extensions = [python()];
+import ToggleSyntax from "./ToggleSyntax";
 
 export const CodeEditor = () => {
   const router = useRouter();
   const create = useMutation(api.code.create);
+
   const [content, setContent] = useState("");
+  const [syntax, setSyntax] = useState(false);
 
   const onCreate = () => {
     if (content.length === 0) return;
@@ -41,6 +42,7 @@ export const CodeEditor = () => {
     <div>
       <Header>
         <div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
+          <ToggleSyntax setSyntax={setSyntax} />
           <ConfirmDialog title='Save' confirmHandler={onCreate} />
           <HoverBorderGradient
             containerClassName='rounded-full'
@@ -52,12 +54,13 @@ export const CodeEditor = () => {
           </HoverBorderGradient>
         </div>
       </Header>
+
       <CodeMirror
-        className='text-2xl'
+        className='text-xl'
         height='100vh'
-        theme={vscodeDark}
+        theme={duotoneDark}
         placeholder='Type something...'
-        extensions={extensions}
+        extensions={syntax ? [python()] : []}
         basicSetup={{
           tabSize: 4,
         }}

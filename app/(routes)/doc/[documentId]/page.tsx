@@ -26,24 +26,22 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
 		id: params.documentId,
 	})
 
-	return (
-		<>
-			{document === undefined && !document ? (
-				<div>
-					<div className='md:max-w-3xl lg:max-w-4xl mx-auto mt-10'>
-						<div className='space-y-4 pl-8 pt-4'>
-							<Skeleton className='h-14 w-[50%]' />
-							<Skeleton className='h-4 w-[80%]' />
-							<Skeleton className='h-4 w-[40%]' />
-							<Skeleton className='h-4 w-[60%]' />
-						</div>
+	if (document === undefined) {
+		return (
+			<div>
+				<div className='md:max-w-3xl lg:max-w-4xl mx-auto mt-10'>
+					<div className='space-y-4 pl-8 pt-4'>
+						<Skeleton className='h-14 w-[50%]' />
+						<Skeleton className='h-4 w-[80%]' />
+						<Skeleton className='h-4 w-[40%]' />
+						<Skeleton className='h-4 w-[60%]' />
 					</div>
 				</div>
-			) : (
-				<Editor content={document.content} editable={false} />
-			)}
-		</>
-	)
+			</div>
+		)
+	}
+
+	return <Editor content={document.content || ''} editable={false} />
 }
 
 export default DocumentPage

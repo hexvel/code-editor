@@ -1,24 +1,24 @@
-import { ConvexClientProvider } from '@/components/providers/convex-provider'
-import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
-import './globals.css'
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import type { Metadata } from "next";
+import { Roboto } from "next/font/google";
+import "./globals.css";
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['500'] })
+const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
 
 export const metadata: Metadata = {
-	title: 'Code Editor',
-}
+  title: "Code Editor",
+};
 
 export default function RootLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-	return (
-		<html lang='en'>
-			<body className={roboto.className}>
-				<ConvexClientProvider>{children}</ConvexClientProvider>
-			</body>
-		</html>
-	)
+  return (
+    <html lang='en'>
+      <body className={roboto.className}>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
+      </body>
+    </html>
+  );
 }

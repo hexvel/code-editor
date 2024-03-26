@@ -3,20 +3,21 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-	width: 14px;
-	background: rgba(59, 63, 113, 0.333);
+  width: 8px;
+  background: rgba(59, 63, 113, 0.333);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: rgba(72, 78, 160, 0.333);
+  background: rgba(72, 78, 160, 0.333);
 }
 
 :root,
 html,
 body {
-	height: 100vh;
+  height: 100vh;
 }
 
 body {
-	background-color: #121315;
+  background-color: #121315;
+  overflow-y: hidden;
 }

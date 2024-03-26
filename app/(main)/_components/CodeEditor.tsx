@@ -1,5 +1,6 @@
 "use client";
 
+import ConfirmDialog from "@/components/confirm";
 import { Header } from "@/components/header";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { api } from "@/convex/_generated/api";
@@ -40,14 +41,7 @@ export const CodeEditor = () => {
     <div>
       <Header>
         <div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
-          <HoverBorderGradient
-            containerClassName='rounded-full'
-            as='button'
-            className='bg-transparent transition-transform flex items-center space-x-2'
-            onClick={onCreate}
-          >
-            <span>Save</span>
-          </HoverBorderGradient>
+          <ConfirmDialog title='Save' confirmHandler={onCreate} />
           <HoverBorderGradient
             containerClassName='rounded-full'
             as='button'
@@ -62,7 +56,7 @@ export const CodeEditor = () => {
         className='text-2xl'
         height='100vh'
         theme={vscodeDark}
-        placeholder='Введите свой код'
+        placeholder='Type something...'
         extensions={extensions}
         basicSetup={{
           tabSize: 4,

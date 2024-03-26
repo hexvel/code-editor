@@ -26,6 +26,10 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
 		id: params.documentId,
 	})
 
+	if (document === null) {
+		return <p className='text-center text-3xl'>Not found</p>
+	}
+
 	if (document === undefined) {
 		return (
 			<div>
@@ -41,7 +45,7 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
 		)
 	}
 
-	return <Editor content={document.content || ''} editable={false} />
+	return <Editor content={document.content} editable={false} />
 }
 
 export default DocumentPage

@@ -4,9 +4,10 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 
 import { python } from '@codemirror/lang-python'
-import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night'
+import { vscodeDark } from '@uiw/codemirror-theme-vscode'
 import CodeMirror from '@uiw/react-codemirror'
 
+import { Header } from '@/components/header'
 import { api } from '@/convex/_generated/api'
 import { useMutation } from 'convex/react'
 import { randomBytes } from 'crypto'
@@ -35,20 +36,27 @@ const CodeEditor = () => {
 	}
 	return (
 		<div>
+			<Header>
+				<div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
+					<button
+						className='text-white bg-[#5d7aec] py-2 px-4 rounded-md hover:bg-[#4358ac] transition-colors'
+						onClick={onCreate}
+					>
+						Сохранить
+					</button>
+				</div>
+			</Header>
 			<CodeMirror
 				className='text-2xl'
 				height='100vh'
-				theme={tokyoNight}
+				theme={vscodeDark}
 				placeholder='Введите свой код'
 				extensions={extensions}
+				basicSetup={{
+					tabSize: 4,
+				}}
 				onChange={e => setContent(e)}
 			/>
-			<button
-				className='absolute bottom-2 right-6 bg-slate-600 py-2 px-4 rounded-md'
-				onClick={onCreate}
-			>
-				Сохранить
-			</button>
 		</div>
 	)
 }

@@ -1,7 +1,7 @@
 'use client'
 
 import { javascript } from '@codemirror/lang-javascript'
-import { tokyoNight } from '@uiw/codemirror-theme-tokyo-night'
+import { vscodeDark } from '@uiw/codemirror-theme-vscode'
 import CodeMirror from '@uiw/react-codemirror'
 
 const extensions = [javascript({ jsx: true, typescript: true })]
@@ -18,9 +18,13 @@ const Editor = ({ editable, content }: EditorProps) => {
 				className='text-2xl'
 				height='100vh'
 				editable={editable}
-				theme={tokyoNight}
+				tabIndex={4}
+				theme={vscodeDark}
 				value={content}
 				extensions={extensions}
+				basicSetup={{
+					tabSize: 4,
+				}}
 			/>
 		</div>
 	)

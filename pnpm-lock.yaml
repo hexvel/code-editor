@@ -11,7 +11,13 @@ dependencies:
   '@codemirror/lang-python':
     specifier: ^6.1.4
     version: 6.1.4(@codemirror/view@6.26.0)
+  '@uiw/codemirror-theme-atomone':
+    specifier: ^4.21.25
+    version: 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
   '@uiw/codemirror-theme-tokyo-night':
+    specifier: ^4.21.25
+    version: 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
+  '@uiw/codemirror-theme-vscode':
     specifier: ^4.21.25
     version: 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
   '@uiw/codemirror-themes':
@@ -608,8 +614,28 @@ packages:
       '@codemirror/view': 6.26.0
     dev: false
 
+  /@uiw/codemirror-theme-atomone@4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0):
+    resolution: {integrity: sha512-z0Z6jlTR1ITKh8mZsczMV63ckaz+k/RVb1TaYTz+BriejPX/pX8Uzi+6aLsMflHgyvXa7vjYFf0cHUh9PrmItw==}
+    dependencies:
+      '@uiw/codemirror-themes': 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
+    transitivePeerDependencies:
+      - '@codemirror/language'
+      - '@codemirror/state'
+      - '@codemirror/view'
+    dev: false
+
   /@uiw/codemirror-theme-tokyo-night@4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0):
     resolution: {integrity: sha512-/MKur3FA+/ZmkBzJLtqUWgsE6/nz+iM/h7trDqYMk8uDT+7g5MarpLZjI0xtAqox3m2oaiKWXmIMtlDBYt6e5w==}
+    dependencies:
+      '@uiw/codemirror-themes': 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
+    transitivePeerDependencies:
+      - '@codemirror/language'
+      - '@codemirror/state'
+      - '@codemirror/view'
+    dev: false
+
+  /@uiw/codemirror-theme-vscode@4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0):
+    resolution: {integrity: sha512-1gubCz7kHE5XH3H1IUTSrnyK/G3dQRmOIgPFsefE9e+TizhBJnkbKSDSfRfpm5l7jl1G7v/as0HQvN3cYg/Rkg==}
     dependencies:
       '@uiw/codemirror-themes': 4.21.25(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.0)
     transitivePeerDependencies:

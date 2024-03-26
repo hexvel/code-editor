@@ -20,7 +20,7 @@ const CodeEditor = () => {
 	const [content, setContent] = useState('')
 
 	const onCreate = () => {
-		if (content.length < 3) return
+		if (content.length === 0) return
 
 		const promise = create({
 			id: randomBytes(64).toString('hex'),

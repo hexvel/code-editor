@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   title: "Hex Bin",
   description: "Share your code with your friends in a convenient way",
   openGraph: {
-    images: ["/preview.jpg"],
+    images: "/preview.jpg",
+    authors: ["Hexvel"],
   },
 };
 

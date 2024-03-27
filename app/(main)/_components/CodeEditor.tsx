@@ -10,12 +10,14 @@ import CodeMirror from "@uiw/react-codemirror";
 import { useMutation } from "convex/react";
 import { randomBytes } from "crypto";
 
-import { python } from "@codemirror/lang-python";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+
+import Link from "next/link";
+import { SelectLanguage } from "./ChangeLanguage";
 import ToggleSyntax from "./ToggleSyntax";
+import { LIST } from "./languages";
 
 export const CodeEditor = () => {
   const router = useRouter();
@@ -23,6 +25,7 @@ export const CodeEditor = () => {
 
   const [content, setContent] = useState("");
   const [syntax, setSyntax] = useState(false);
+  const [language, setLanguage] = useState("");
 
   const onCreate = () => {
     if (content.length === 0) return;
@@ -38,16 +41,29 @@ export const CodeEditor = () => {
       error: "Failed to create a new page.",
     });
   };
+
+  const getLanguageExtension = () => {
+    if (!language) {
+      return LIST[0].langSupport;
+    }
+    const foundLang = LIST.find(languageObj => languageObj.langId === language);
+    if (foundLang) {
+      return foundLang.langSupport;
+    }
+    return LIST[0].langSupport;
+  };
+
   return (
     <div>
       <Header>
-        <div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
+        <div className='w-full md:ml-auto md:justify-end justify-between flex items-center gap-x-2'>
           <ToggleSyntax setSyntax={setSyntax} />
+          <SelectLanguage setLanguage={setLanguage} />
           <ConfirmDialog title='Save' confirmHandler={onCreate} />
           <HoverBorderGradient
             containerClassName='rounded-full'
             as='button'
-            className='bg-transparent transition-transform flex items-center space-x-2'
+            className='hidden md:flex bg-transparent transition-transform items-center space-x-2'
           >
             <Link href='/about'>About us</Link>
           </HoverBorderGradient>
@@ -58,8 +74,8 @@ export const CodeEditor = () => {
         className='text-xl'
         height='100vh'
         theme={duotoneDark}
-        placeholder='Type something...'
-        extensions={syntax ? [python()] : []}
+        placeholder='Type some your code...'
+        extensions={[getLanguageExtension()]}
         basicSetup={{
           tabSize: 4,
         }}

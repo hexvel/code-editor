@@ -5,18 +5,14 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import Logo from "./logo";
 
-interface IHeading {
-  title: string;
-}
-
 export function Header({ children }: { children: React.ReactNode }) {
   const scrolled = useScrollTop();
 
   return (
     <div
       className={cn(
-        "z-50 bg-background bg-black sticky top-0 flex items-center w-full p-3 transition-colors duration-300",
-        scrolled && "bg-black/20 backdrop-blur-xl"
+        "z-50 bg-background bg-[#000000] sticky top-0 flex items-center w-full p-3 transition-colors duration-300",
+        scrolled && "bg-[#2a2734]/20 backdrop-blur-xl"
       )}
     >
       <Logo />

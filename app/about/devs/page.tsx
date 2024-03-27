@@ -12,7 +12,7 @@ const people = [
   {
     id: 1,
     name: "Hexvel | Дима",
-    designation: "Full-stack Developer",
+    designation: "Full-Stack Developer",
     image: "/hexvel.jpg",
   },
   {

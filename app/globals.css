@@ -14,12 +14,13 @@
 :root,
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
   background-color: #121315;
   overflow-y: hidden;
+  margin-bottom: 80px;
 }
 
 .ͼo .cm-gutters,

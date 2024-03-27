@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const people = [
   {
     id: 1,
-    name: "Hexvel } Дима",
+    name: "Hexvel | Дима",
     designation: "Full-stack Developer",
     image: "/hexvel.jpg",
   },

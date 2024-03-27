@@ -43,6 +43,9 @@ export function SelectLanguage({
           <SelectItem className='cursor-pointer' value='cpp'>
             C/C++
           </SelectItem>
+          <SelectItem className='cursor-pointer' value='haskell'>
+            Haskell
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

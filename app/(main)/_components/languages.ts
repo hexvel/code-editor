@@ -33,4 +33,8 @@ export const LIST = [
     langId: "cpp",
     langSupport: langs.cpp(),
   },
+  {
+    langId: "haskell",
+    langSupport: langs.haskell(),
+  },
 ];

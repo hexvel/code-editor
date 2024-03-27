@@ -10,6 +10,10 @@ const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
 
 export const metadata: Metadata = {
   title: "Code Editor",
+  description: "Share your code with your friends in a convenient way",
+  openGraph: {
+    images: ["/preview.jpg"],
+  },
 };
 
 export default function RootLayout({

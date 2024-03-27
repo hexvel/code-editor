@@ -44,6 +44,7 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
     <>
       <Header>
         <div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
+          <p className='text-xl'>{document.langSupport}</p>
           <CopyLink initialData={document} />
         </div>
       </Header>

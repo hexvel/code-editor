@@ -14,7 +14,7 @@ const Logo = () => {
     <Link href='/' className='hidden md:flex items-center gap-x-2'>
       <Image src='/logo.png' height='40' width='40' alt='Logo' />
       <p className={cn("font-semibold text-2xl text-white", font.className)}>
-        HEXCode
+        HEXBin
       </p>
     </Link>
   );

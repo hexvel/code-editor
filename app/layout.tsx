@@ -9,7 +9,7 @@ import "./globals.css";
 const roboto = Roboto({ subsets: ["latin"], weight: ["500"] });
 
 export const metadata: Metadata = {
-  title: "Code Editor",
+  title: "Hex Bin",
   description: "Share your code with your friends in a convenient way",
   openGraph: {
     images: ["/preview.jpg"],

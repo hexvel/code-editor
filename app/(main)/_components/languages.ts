@@ -10,6 +10,10 @@ export const LIST = [
     langSupport: langs.python(),
   },
   {
+    langId: "CSharp",
+    langSupport: langs.csharp(),
+  },
+  {
     langId: "javascript",
     langSupport: langs.javascript(),
   },

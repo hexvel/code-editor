@@ -15,11 +15,13 @@ export const create = mutation({
   args: {
     id: v.string(),
     content: v.string(),
+    langSupport: v.string(),
   },
   handler: async (ctx, args) => {
     const document = await ctx.db.insert("code", {
       id: args.id,
       content: args.content,
+      langSupport: args.langSupport,
     });
 
     return document;

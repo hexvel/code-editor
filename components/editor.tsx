@@ -1,17 +1,16 @@
 "use client";
 
-import { python } from "@codemirror/lang-python";
+import { LanguageSupport } from "@codemirror/language";
 import { duotoneDark } from "@uiw/codemirror-theme-duotone";
 import CodeMirror from "@uiw/react-codemirror";
-
-const extensions = [python()];
 
 interface EditorProps {
   editable?: boolean;
   content?: string;
+  extensions: LanguageSupport[];
 }
 
-const Editor = ({ editable, content }: EditorProps) => {
+const Editor = ({ editable, content, extensions }: EditorProps) => {
   return (
     <div>
       <CodeMirror

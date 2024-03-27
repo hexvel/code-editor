@@ -6,5 +6,6 @@ export default defineSchema({
   code: defineTable({
     id: v.string(),
     content: v.optional(v.string()),
+    langSupport: v.optional(v.string()),
   }),
 });

@@ -14,9 +14,9 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import useLanguageExtension from "@/hooks/use-language-extension";
 import Link from "next/link";
 import { SelectLanguage } from "./ChangeLanguage";
-import { LIST } from "./languages";
 
 export const CodeEditor = () => {
   const router = useRouter();
@@ -24,6 +24,7 @@ export const CodeEditor = () => {
 
   const [content, setContent] = useState("");
   const [language, setLanguage] = useState("");
+  const { lang } = useLanguageExtension(language);
 
   const onCreate = () => {
     if (content.length === 0) return;
@@ -31,6 +32,7 @@ export const CodeEditor = () => {
     const promise = create({
       id: randomBytes(64).toString("hex"),
       content,
+      langSupport: language,
     }).then(id => router.push(`/doc/${id}`));
 
     toast.promise(promise, {
@@ -38,17 +40,6 @@ export const CodeEditor = () => {
       success: "New page created!",
       error: "Failed to create a new page.",
     });
-  };
-
-  const getLanguageExtension = () => {
-    if (!language) {
-      return LIST[0].langSupport;
-    }
-    const foundLang = LIST.find(languageObj => languageObj.langId === language);
-    if (foundLang) {
-      return foundLang.langSupport;
-    }
-    return LIST[0].langSupport;
   };
 
   return (
@@ -72,7 +63,7 @@ export const CodeEditor = () => {
         height='100vh'
         theme={tokyoNight}
         placeholder='Type some your code...'
-        extensions={[getLanguageExtension()]}
+        extensions={[lang]}
         basicSetup={{
           tabSize: 4,
         }}

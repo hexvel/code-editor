@@ -5,7 +5,8 @@ import { Header } from "@/components/header";
 import Loader from "@/components/loader";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
-import useOrigin from "@/hooks/use-origin";
+import useLanguageExtension from "@/hooks/use-language-extension";
+import { LanguageSupport } from "@codemirror/language";
 import { useQuery } from "convex/react";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
@@ -17,8 +18,6 @@ interface DocumentIdPageProps {
 }
 
 const DocumentPage = ({ params }: DocumentIdPageProps) => {
-  const origin = useOrigin();
-
   const Editor = useMemo(
     () =>
       dynamic(() => import("@/components/editor"), {
@@ -39,6 +38,8 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
     return <p className='text-center text-3xl'>Not found</p>;
   }
 
+  const { lang } = useLanguageExtension(document.langSupport!);
+
   return (
     <>
       <Header>
@@ -46,7 +47,11 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
           <CopyLink initialData={document} />
         </div>
       </Header>
-      <Editor content={document.content} editable={false} />
+      <Editor
+        extensions={[lang as LanguageSupport]}
+        content={document.content}
+        editable={false}
+      />
     </>
   );
 };

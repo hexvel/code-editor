@@ -26,6 +26,10 @@ export const LIST = [
     langSupport: langs.xml(),
   },
   {
+    langId: "rust",
+    langSupport: langs.rust(),
+  },
+  {
     langId: "cpp",
     langSupport: langs.cpp(),
   },

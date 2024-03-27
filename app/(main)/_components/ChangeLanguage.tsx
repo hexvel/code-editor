@@ -37,6 +37,9 @@ export function SelectLanguage({
           <SelectItem className='cursor-pointer' value='xml'>
             XML
           </SelectItem>
+          <SelectItem className='cursor-pointer' value='rust'>
+            Rust
+          </SelectItem>
           <SelectItem className='cursor-pointer' value='cpp'>
             C/C++
           </SelectItem>

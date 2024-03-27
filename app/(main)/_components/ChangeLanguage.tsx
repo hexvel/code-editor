@@ -29,7 +29,7 @@ export function SelectLanguage({
             JavaScript
           </SelectItem>
           <SelectItem className='cursor-pointer' value='csharp'>
-            CSharp
+            C#
           </SelectItem>
           <SelectItem className='cursor-pointer' value='java'>
             Java
@@ -38,7 +38,7 @@ export function SelectLanguage({
             XML
           </SelectItem>
           <SelectItem className='cursor-pointer' value='cpp'>
-            CPP
+            C/C++
           </SelectItem>
         </SelectGroup>
       </SelectContent>

@@ -1,7 +1,7 @@
 "use client";
 
 import { LanguageSupport } from "@codemirror/language";
-import { duotoneDark } from "@uiw/codemirror-theme-duotone";
+import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 import CodeMirror from "@uiw/react-codemirror";
 
 interface EditorProps {
@@ -18,7 +18,7 @@ const Editor = ({ editable, content, extensions }: EditorProps) => {
         height='100vh'
         editable={editable}
         tabIndex={4}
-        theme={duotoneDark}
+        theme={tokyoNight}
         value={content}
         extensions={extensions}
         basicSetup={{

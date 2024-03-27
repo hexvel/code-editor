@@ -22,7 +22,8 @@ body {
   overflow-y: hidden;
 }
 
-.ͼo .cm-gutters {
+.ͼo .cm-gutters,
+.ͼ1x .cm-gutters {
   background: #111111;
 }
 

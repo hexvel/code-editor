@@ -4,7 +4,7 @@ import ConfirmDialog from "@/components/confirm";
 import { Header } from "@/components/header";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { api } from "@/convex/_generated/api";
-import { duotoneDark } from "@uiw/codemirror-theme-duotone";
+import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { useMutation } from "convex/react";
@@ -73,7 +73,7 @@ export const CodeEditor = () => {
       <CodeMirror
         className='text-xl'
         height='100vh'
-        theme={duotoneDark}
+        theme={tokyoNight}
         placeholder='Type some your code...'
         extensions={[getLanguageExtension()]}
         basicSetup={{

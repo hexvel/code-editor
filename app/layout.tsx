@@ -28,7 +28,7 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey='hexbin-theme-2'
           >
-            <Toaster position='bottom-center' />
+            <Toaster theme='dark' position='bottom-center' />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>

@@ -22,12 +22,24 @@ export function SelectLanguage({
       <SelectContent>
         <SelectGroup onChange={e => console.log(e)}>
           <SelectLabel>Languages</SelectLabel>
-          <SelectItem value='python'>Python</SelectItem>
-          <SelectItem value='javascript'>JavaScript</SelectItem>
-          <SelectItem value='csharp'>CSharp</SelectItem>
-          <SelectItem value='java'>Java</SelectItem>
-          <SelectItem value='xml'>XML</SelectItem>
-          <SelectItem value='cpp'>CPP</SelectItem>
+          <SelectItem className='cursor-pointer' value='python'>
+            Python
+          </SelectItem>
+          <SelectItem className='cursor-pointer' value='javascript'>
+            JavaScript
+          </SelectItem>
+          <SelectItem className='cursor-pointer' value='csharp'>
+            CSharp
+          </SelectItem>
+          <SelectItem className='cursor-pointer' value='java'>
+            Java
+          </SelectItem>
+          <SelectItem className='cursor-pointer' value='xml'>
+            XML
+          </SelectItem>
+          <SelectItem className='cursor-pointer' value='cpp'>
+            CPP
+          </SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

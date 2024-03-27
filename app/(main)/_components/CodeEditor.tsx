@@ -16,7 +16,6 @@ import { toast } from "sonner";
 
 import Link from "next/link";
 import { SelectLanguage } from "./ChangeLanguage";
-import ToggleSyntax from "./ToggleSyntax";
 import { LIST } from "./languages";
 
 export const CodeEditor = () => {
@@ -24,7 +23,6 @@ export const CodeEditor = () => {
   const create = useMutation(api.code.create);
 
   const [content, setContent] = useState("");
-  const [syntax, setSyntax] = useState(false);
   const [language, setLanguage] = useState("");
 
   const onCreate = () => {
@@ -57,7 +55,6 @@ export const CodeEditor = () => {
     <div>
       <Header>
         <div className='w-full md:ml-auto md:justify-end justify-between flex items-center gap-x-2'>
-          <ToggleSyntax setSyntax={setSyntax} />
           <SelectLanguage setLanguage={setLanguage} />
           <ConfirmDialog title='Save' confirmHandler={onCreate} />
           <HoverBorderGradient

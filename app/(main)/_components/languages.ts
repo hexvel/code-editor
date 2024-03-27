@@ -2,6 +2,10 @@ import { langs } from "@uiw/codemirror-extensions-langs";
 
 export const LIST = [
   {
+    langId: "dylan",
+    langSupport: langs.dylan(),
+  },
+  {
     langId: "python",
     langSupport: langs.python(),
   },

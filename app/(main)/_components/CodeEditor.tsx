@@ -8,7 +8,6 @@ import { tokyoNight } from "@uiw/codemirror-theme-tokyo-night";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { useMutation } from "convex/react";
-import { randomBytes } from "crypto";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -30,7 +29,6 @@ export const CodeEditor = () => {
     if (content.length === 0) return;
 
     const promise = create({
-      id: randomBytes(64).toString("hex"),
       content,
       langSupport: language,
     }).then(id => router.push(`/doc/${id}`));

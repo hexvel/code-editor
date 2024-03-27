@@ -24,6 +24,7 @@ export function SelectLanguage({
           <SelectLabel>Languages</SelectLabel>
           <SelectItem value='python'>Python</SelectItem>
           <SelectItem value='javascript'>JavaScript</SelectItem>
+          <SelectItem value='csharp'>CSharp</SelectItem>
           <SelectItem value='java'>Java</SelectItem>
           <SelectItem value='xml'>XML</SelectItem>
           <SelectItem value='cpp'>CPP</SelectItem>

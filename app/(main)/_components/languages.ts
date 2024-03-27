@@ -10,7 +10,7 @@ export const LIST = [
     langSupport: langs.python(),
   },
   {
-    langId: "CSharp",
+    langId: "csharp",
     langSupport: langs.csharp(),
   },
   {

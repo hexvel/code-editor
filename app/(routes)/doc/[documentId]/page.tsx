@@ -6,6 +6,7 @@ import Loader from "@/components/loader";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import useLanguageExtension from "@/hooks/use-language-extension";
+import { capitalizeFirstLetter } from "@/utils/helper";
 import { LanguageSupport } from "@codemirror/language";
 import { useQuery } from "convex/react";
 import dynamic from "next/dynamic";
@@ -44,7 +45,9 @@ const DocumentPage = ({ params }: DocumentIdPageProps) => {
     <>
       <Header>
         <div className='md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2'>
-          <p className='text-xl'>{document.langSupport}</p>
+          <p className='text-xl'>
+            {capitalizeFirstLetter(document.langSupport!)}
+          </p>
           <CopyLink initialData={document} />
         </div>
       </Header>
